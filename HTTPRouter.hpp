@@ -1,5 +1,5 @@
-#ifndef HTTP_SERVICE_H_
-#define HTTP_SERVICE_H_
+#ifndef HTTP_ROUTER_H_
+#define HTTP_ROUTER_H_
 
 #include <map>
 #include <string.h>
@@ -125,4 +125,4 @@ public:
 
 };
 
-#endif // !HTTP_SERVICE_H_
+#endif // !HTTP_ROUTER_H_
