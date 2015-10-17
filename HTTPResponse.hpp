@@ -1,6 +1,7 @@
 #ifndef HTTP_RESPONSE_H_
 #define HTTP_RESPONSE_H_
 
+#include "stdio.h"
 #include <string.h>
 #include <map>
 #include <memory.h>
@@ -50,7 +51,7 @@ public:
 
         head += "HTTP/1.0 "+ this->status_description( this->status_ ) + "\r\n";
 
-        sprintf( buffer, "%d", this->content_len_ );
+        sprintf_s( buffer, sizeof(buffer), "%d", this->content_len_ );
         header_["Content-Length"] = buffer;
 
         for ( auto kv : header_ )
@@ -60,7 +61,7 @@ public:
         head += "\r\n";
 
         memcpy( buffer, head.c_str(), head.length() );
-        *len += head.length();
+        *len += static_cast< int >( head.length() );
         memcpy( buffer + head.length(), this->content_, this->content_len_ );
         *len += this->content_len_;
 
