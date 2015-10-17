@@ -26,21 +26,7 @@ public:
     string method()
     {
         return this->method_;
-    }
-
-    /*HTTPMETHOD method()
-    {
-        if ( this->method_ == "GET" )
-            return HTTPMETHOD::GET;
-        else if ( this->method_ == "POST" )
-            return HTTPMETHOD::POST;
-        else if ( this->method_ == "PUT" )
-            return HTTPMETHOD::PUT;
-        else if ( this->method_ == "DELETE" )
-            return HTTPMETHOD::DELETE;
-
-        return HTTPMETHOD::UNKNOW;
-    };*/
+    } 
 
     string path()
     {
